@@ -14,10 +14,6 @@ app.secret_key = 'Aman'
 api = Api(app)
 jwt = JWT(app, authenticate, identity)
 
-@app.before_first_request
-def create_table():
-    db.create_all()
-
 
 class home(Resource):
     def get(self):
